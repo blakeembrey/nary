@@ -1,6 +1,6 @@
 {
   "name": "nary",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Force a function arity",
   "main": "nary.js",
   "scripts": {
