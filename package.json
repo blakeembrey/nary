@@ -1,0 +1,33 @@
+{
+  "name": "nary",
+  "version": "0.0.0",
+  "description": "Force a function arity",
+  "main": "nary.js",
+  "scripts": {
+    "test": "istanbul cover _mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/nary.git"
+  },
+  "keywords": [
+    "nullary",
+    "unary",
+    "binary",
+    "ternary",
+    "arity",
+    "arguments",
+    "count",
+    "length"
+  ],
+  "author": "Blake Embrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/nary/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/nary",
+  "devDependencies": {
+    "mocha": "~1.17.0",
+    "istanbul": "~0.2.4"
+  }
+}
