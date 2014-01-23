@@ -1,6 +1,6 @@
 {
   "name": "nary",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Force a maximum function arity",
   "main": "nary.js",
   "scripts": {
