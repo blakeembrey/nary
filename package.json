@@ -1,7 +1,7 @@
 {
   "name": "nary",
   "version": "0.0.1",
-  "description": "Force a function arity",
+  "description": "Force a maximum function arity",
   "main": "nary.js",
   "scripts": {
     "test": "istanbul cover _mocha -- -R spec"
@@ -29,5 +29,9 @@
   "devDependencies": {
     "mocha": "~1.17.0",
     "istanbul": "~0.2.4"
+  },
+  "dependencies": {
+    "partial": "git://github.com/blakeembrey/partial#v0.0.1",
+    "arity": "git://github.com/blakeembrey/arity#v0.0.1"
   }
 }

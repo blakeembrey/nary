@@ -1,5 +1,18 @@
-var names   = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-var __slice = Array.prototype.slice;
+var arity   = require('arity');
+var partial = require('partial');
+
+/**
+ * Force a function to accept a specific maximum number of arguments.
+ *
+ * @param  {Number}   length
+ * @param  {Function} fn
+ * @return {Function}
+ */
+exports.ary = function (length, fn) {
+  return arity(length, function () {
+    return fn.apply(this, Array.prototype.slice.call(arguments, 0, length));
+  });
+};
 
 /**
  * Force a function to accept zero arguments.
@@ -7,35 +20,23 @@ var __slice = Array.prototype.slice;
  * @param  {Function} fn
  * @return {Function}
  */
-exports.nullary = function (fn) {
-  return function () {
-    return fn.call(this);
-  };
-};
+exports.nullary = partial(exports.ary, 0);
 
 /**
- * Force a function to accept a single argument.
+ * Force a function to accept a maximum of one argument.
  *
  * @param  {Function} fn
  * @return {Function}
  */
-exports.unary = function (fn) {
-  return function (a) {
-    return fn.call(this, a);
-  };
-};
+exports.unary = partial(exports.ary, 1);
 
 /**
- * Force a function to accept two arguments.
+ * Force a function to accept a maximum of two arguments.
  *
  * @param  {Function} fn
  * @return {Function}
  */
-exports.binary = function (fn) {
-  return function (a, b) {
-    return fn.call(this, a, b);
-  };
-};
+exports.binary = partial(exports.ary, 2);
 
 /**
  * Force a function to accept three arguments.
@@ -43,25 +44,12 @@ exports.binary = function (fn) {
  * @param  {Function} fn
  * @return {Function}
  */
-exports.ternary = function (fn) {
-  return function (a, b, c) {
-    return fn.call(this, a, b, c);
-  };
-};
+exports.ternary = partial(exports.ary, 3);
 
 /**
- * Force a function to accept any number of arguments.
+ * Force a function to accept four arguments.
  *
- * @param  {Number}   length
  * @param  {Function} fn
  * @return {Function}
  */
-exports.ary = function (length, fn) {
-  return eval(
-    '(function (' + __slice.call(names, 0, length).join(',') + ') {\n' +
-    'var args = __slice.call(arguments, 0, length);\n' +
-    'args.length = length;\n' +
-    'return fn.apply(this, args);\n' +
-    '})'
-  );
-};
+exports.quaternary = partial(exports.ary, 4);

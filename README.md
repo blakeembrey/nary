@@ -1,6 +1,6 @@
 # N-ary
 
-Force a function to accept a fixed number of arity.
+Force a function to accept a maximum number of arity.
 
 ## Installation
 
@@ -12,15 +12,14 @@ npm install nary --save
 
 ```javascript
 var nary = require('nary');
-```
 
-* `nary.nullary(fn)`
-* `nary.unary(fn)`
-* `nary.binary(fn)`
-* `nary.ternary(fn)`
-* `nary.ary(number, fn)`
+nary.nullary(fn).length; //=> 0
+nary.unary(fn).length; //=> 1
+nary.binary(fn).length; //=> 2
+nary.ternary(fn).length; //=> 3
+nary.quaternary(fn).length; //=> 4
+nary.ary(5, fn).length; //=> 5
 
-```javascript
 // This example fails because `parseInt` accepts an optional second argument as
 // the radix. This can wreak havoc in unexpected situations.
 [1, 2, 3, 4, 5].map(parseInt); //=> [1, NaN, NaN, NaN, NaN]

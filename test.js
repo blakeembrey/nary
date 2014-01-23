@@ -1,5 +1,6 @@
 /* global describe, it */
 
+var _      = 'test';
 var nary   = require('./');
 var assert = require('assert');
 
@@ -17,45 +18,63 @@ describe('nary', function () {
     var fn = nary.nullary(test);
 
     assert.equal(fn.length, 0);
-    assert.equal(fn('one'), 0);
-    assert.equal(fn('one', 'two'), 0);
-    assert.equal(fn('one', 'two', 'three'), 0);
+    assert.equal(fn(_), 0);
+    assert.equal(fn(_, _), 0);
+    assert.equal(fn(_, _, _), 0);
   });
 
-  it('should accept a single argument', function () {
+  it('should accept a maximum of one argument', function () {
     var fn = nary.unary(test);
 
     assert.equal(fn.length, 1);
-    assert.equal(fn('one'), 1);
-    assert.equal(fn('one', 'two'), 1);
-    assert.equal(fn('one', 'two', 'three'), 1);
+    assert.equal(fn(), 0);
+    assert.equal(fn(_), 1);
+    assert.equal(fn(_, _), 1);
+    assert.equal(fn(_, _, _), 1);
   });
 
-  it('should accept two arguments', function () {
+  it('should accept a maximum of two arguments', function () {
     var fn = nary.binary(test);
 
     assert.equal(fn.length, 2);
-    assert.equal(fn('one'), 2);
-    assert.equal(fn('one', 'two'), 2);
-    assert.equal(fn('one', 'two', 'three'), 2);
+    assert.equal(fn(), 0);
+    assert.equal(fn(_), 1);
+    assert.equal(fn(_, _), 2);
+    assert.equal(fn(_, _, _), 2);
   });
 
-  it('should accept three arguments', function () {
+  it('should accept a maximum of three arguments', function () {
     var fn = nary.ternary(test);
 
     assert.equal(fn.length, 3);
-    assert.equal(fn('one'), 3);
-    assert.equal(fn('one', 'two'), 3);
-    assert.equal(fn('one', 'two', 'three'), 3);
+    assert.equal(fn(), 0);
+    assert.equal(fn(_), 1);
+    assert.equal(fn(_, _), 2);
+    assert.equal(fn(_, _, _), 3);
+    assert.equal(fn(_, _, _, _), 3);
   });
 
-  it('should accept any number of arguments', function () {
-    var fn = nary.ary(10, test);
+  it('should accept a maximum of four arguments', function () {
+    var fn = nary.quaternary(test);
 
-    assert.equal(fn.length, 10);
-    assert.equal(fn('one'), 10);
-    assert.equal(fn('one', 'two'), 10);
-    assert.equal(fn('one', 'two', 'three'), 10);
-    assert.equal(fn('one', 'two', 'three', 'four'), 10);
+    assert.equal(fn.length, 4);
+    assert.equal(fn(), 0);
+    assert.equal(fn(_), 1);
+    assert.equal(fn(_, _), 2);
+    assert.equal(fn(_, _, _), 3);
+    assert.equal(fn(_, _, _, _), 4);
+    assert.equal(fn(_, _, _, _, _), 4);
+  });
+
+  it('should accept any number of maximum arguments', function () {
+    var fn = nary.ary(6, test);
+
+    assert.equal(fn.length, 6);
+    assert.equal(fn(), 0);
+    assert.equal(fn(_), 1);
+    assert.equal(fn(_, _), 2);
+    assert.equal(fn(_, _, _), 3);
+    assert.equal(fn(_, _, _, _), 4);
+    assert.equal(fn(_, _, _, _, _, _, _, _, _), 6);
   });
 });
