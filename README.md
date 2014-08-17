@@ -1,5 +1,10 @@
 # N-ary
 
+[![NPM version][npm-image]][npm-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Gittip][gittip-image]][gittip-url]
+
 Force a function to accept a maximum number of arity.
 
 ## Installation
@@ -32,3 +37,12 @@ nary.ary(5, fn).length; //=> 5
 ## License
 
 MIT
+
+[npm-image]: https://img.shields.io/npm/v/nary.svg?style=flat
+[npm-url]: https://npmjs.org/package/nary
+[travis-image]: https://img.shields.io/travis/blakeembrey/nary.svg?style=flat
+[travis-url]: https://travis-ci.org/blakeembrey/nary
+[coveralls-image]: https://img.shields.io/coveralls/blakeembrey/nary.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/blakeembrey/nary?branch=master
+[gittip-image]: https://img.shields.io/gittip/blakeembrey.svg?style=flat
+[gittip-url]: https://www.gittip.com/blakeembrey
