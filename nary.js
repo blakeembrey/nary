@@ -1,5 +1,5 @@
-var arity   = require('arity');
-var partial = require('partial');
+var arity   = require('util-arity');
+var partial = require('util-partial');
 
 /**
  * Force a function to accept a specific maximum number of arguments.
