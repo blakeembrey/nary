@@ -44,6 +44,6 @@
     "rimraf": "^2.5.4",
     "tslint": "^5.0.0",
     "tslint-config-standard": "^4.0.0",
-    "typescript": "^2.1.5"
+    "typescript": "^2.3.1"
   }
 }
