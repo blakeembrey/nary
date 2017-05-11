@@ -1,11 +1,11 @@
 # Nary
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/nary.svg)](https://greenkeeper.io/)
 
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][downloads-image]][downloads-url]
-[![Build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
+[![NPM version](https://img.shields.io/npm/v/nary.svg?style=flat)](https://npmjs.org/package/nary)
+[![NPM downloads](https://img.shields.io/npm/dm/nary.svg?style=flat)](https://npmjs.org/package/nary)
+[![Build status](https://img.shields.io/travis/blakeembrey/nary.svg?style=flat)](https://travis-ci.org/blakeembrey/nary)
+[![Test coverage](https://img.shields.io/coveralls/blakeembrey/nary.svg?style=flat)](https://coveralls.io/r/blakeembrey/nary?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/nary.svg)](https://greenkeeper.io/)
 
 > Enforce function arity in JavaScript.
 
@@ -42,12 +42,3 @@ This project is written using [TypeScript](https://github.com/Microsoft/TypeScri
 ## License
 
 Apache 2.0
-
-[npm-image]: https://img.shields.io/npm/v/nary.svg?style=flat
-[npm-url]: https://npmjs.org/package/nary
-[downloads-image]: https://img.shields.io/npm/dm/nary.svg?style=flat
-[downloads-url]: https://npmjs.org/package/nary
-[travis-image]: https://img.shields.io/travis/blakeembrey/nary.svg?style=flat
-[travis-url]: https://travis-ci.org/blakeembrey/nary
-[coveralls-image]: https://img.shields.io/coveralls/blakeembrey/nary.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/blakeembrey/nary?branch=master
