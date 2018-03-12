@@ -39,11 +39,11 @@
   },
   "homepage": "https://github.com/blakeembrey/nary",
   "devDependencies": {
-    "@types/jest": "^21.1.0",
-    "jest": "^21.0.0",
+    "@types/jest": "^22.2.0",
+    "jest": "^22.4.2",
     "rimraf": "^2.5.4",
-    "tslint": "^5.0.0",
-    "tslint-config-standard": "^6.0.0",
-    "typescript": "^2.1.5"
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.7.2"
   }
 }
